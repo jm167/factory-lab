@@ -1,7 +1,12 @@
+import { defineConfig, includeIgnoreFile } from "eslint/config";
+import { fileURLToPath } from "node:url";
 import tseslint from "typescript-eslint";
 
-export default [
-  { ignores: ["node_modules", "dist", "eslint.config.mjs"] },
+const gitignore = fileURLToPath(new URL(".gitignore", import.meta.url));
+
+export default defineConfig([
+  includeIgnoreFile(gitignore),
+  { ignores: ["eslint.config.mjs"] },
   ...tseslint.configs.strictTypeChecked,
   {
     languageOptions: {
@@ -14,4 +19,4 @@ export default [
       "@typescript-eslint/switch-exhaustiveness-check": "error",
     },
   },
-];
+]);
