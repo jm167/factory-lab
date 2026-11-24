@@ -11,4 +11,7 @@ describe("label", () => {
   it("traduce shipped", () => {
     expect(label("shipped")).toBe("Enviado");
   });
+  it("traduce cancelled", () => {
+    expect(label("cancelled")).toBe("Cancelado");
+  });
 });
