@@ -1,0 +1,13 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: lint
+      glob: "**/*.{ts,tsx,js}"
+      run: pnpm eslint {staged_files}
+    - name: typecheck
+      run: pnpm tsc --noEmit
+
+pre-push:
+  jobs:
+    - name: test
+      run: pnpm vitest run
