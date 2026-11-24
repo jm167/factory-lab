@@ -1,0 +1,8 @@
+# .github/CODEOWNERS
+/.github/        @jm167
+/.claude/        @jm167
+/scripts/        @jm167
+/eslint.config.* @jm167
+/tsconfig*.json  @jm167
+/lefthook.yml    @jm167
+/package.json    @jm167
