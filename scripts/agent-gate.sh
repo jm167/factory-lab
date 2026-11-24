@@ -6,6 +6,14 @@ COUNTER="/tmp/agent-gate-$SESSION"
 ATTEMPTS=$(cat "$COUNTER" 2>/dev/null || echo 0)
 MAX=3
 
+# El agente pide intervención humana: se deja terminar sin correr verify
+LAST=$(echo "$INPUT" | jq -r '.last_assistant_message // ""')
+if echo "$LAST" | grep -q '\[NEEDS-USER\]'; then
+  echo "$(date -Is) $SESSION escalated" >> "${CLAUDE_PROJECT_DIR:-.}/.claude/escalations.log"
+  rm -f "$COUNTER"
+  exit 0
+fi
+
 if pnpm verify > /tmp/verify.log 2>&1; then
   rm -f "$COUNTER"
   exit 0
