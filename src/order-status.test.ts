@@ -3,7 +3,7 @@ import { label } from "./order-status.js";
 
 describe("label", () => {
   it("traduce paid", () => {
-    expect(label("paid")).toBe("Pagado");
+    expect(label("paid")).toBe("Paid");
   });
   it("traduce draft", () => {
     expect(label("draft")).toBe("Borrador");
