@@ -7,7 +7,9 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings 0",
     "test": "vitest run",
-    "verify": "pnpm typecheck && pnpm lint && pnpm test"
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "verify": "pnpm format:check && pnpm typecheck && pnpm lint && pnpm test"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +27,7 @@
     "@eslint/js": "^10.0.1",
     "eslint": "^10.15.0",
     "lefthook": "^2.2.2",
+    "prettier": "^3.10.1",
     "typescript": "~6.0.3",
     "typescript-eslint": "^8.74.0",
     "vitest": "^5.1.1"

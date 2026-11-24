@@ -1,4 +1,5 @@
 ## Precedencia
+
 1. `pnpm verify` en verde es obligatorio para terminar cualquier tarea.
 2. Si el alcance pedido rompe verify, extiende el cambio solo a lo que
    el compilador o los tests señalan como consecuencia directa.
