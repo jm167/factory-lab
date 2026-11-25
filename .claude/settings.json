@@ -21,5 +21,33 @@
         ]
       }
     ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(pnpm verify)",
+      "Bash(pnpm typecheck)",
+      "Bash(pnpm lint)",
+      "Bash(pnpm test)",
+      "Bash(pnpm format)",
+      "Bash(pnpm exec prettier *)",
+      "PowerShell(pnpm verify)",
+      "PowerShell(pnpm typecheck)",
+      "PowerShell(pnpm lint)",
+      "PowerShell(pnpm test)"
+    ],
+    "deny": [
+      "Edit(/.github/**)",
+      "Edit(/.claude/**)",
+      "Edit(/scripts/**)",
+      "Edit(/eslint.config.mjs)",
+      "Edit(/vitest.config.ts)",
+      "Edit(/tsconfig.json)",
+      "Edit(/lefthook.yml)",
+      "Edit(/package.json)",
+      "Edit(/.prettierrc*)",
+      "Bash(git push *)",
+      "Bash(* --no-verify)",
+      "Bash(* --no-verify *)"
+    ]
   }
 }
