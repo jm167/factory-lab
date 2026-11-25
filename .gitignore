@@ -4,3 +4,5 @@ coverage/
 .env*
 # .prettierignore
 pnpm-lock.yaml
+.claude/hooks.log
+escalations.log
